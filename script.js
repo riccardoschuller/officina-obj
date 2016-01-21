@@ -54,13 +54,61 @@ console.log(officina)
 
 officina.contaPasseggeri = function(brand){
 	var passeggeriPerBrand = 0;
+
 	for (var i in brand) {
-		passeggeriPerBrand = passeggeriPerBrand + brand["# passeggeri"]
-		console.log(passeggeriPerBrand)
+		
+		passeggeriPerBrand = passeggeriPerBrand += brand[i]["# passeggeri"];
+		
 		
 	};
 
 	return passeggeriPerBrand
 }
 
-var pasOpel = officina.contaPasseggeri(officina.toyota);
+console.log("L'Opel ha: " + officina.contaPasseggeri(officina.opel) + " passeggeri in totale");
+console.log("La Toyota ha: " + officina.contaPasseggeri(officina.toyota) + " passeggeri in totale");
+console.log("La Renault ha: " + officina.contaPasseggeri(officina.renault) + " passeggeri in totale");
+
+
+
+function chiediCilindrata(){
+	var clientCilindrata = prompt("Inserisci un numero di cilindrata", 800);
+	if (isNaN(clientCilindrata)) {
+		chiediCilindrata();
+	};
+
+	return clientCilindrata;
+}
+
+clientCilindrata = chiediCilindrata();
+
+officina.confrontaCilindrata = function(brand){
+	var autoCilindrata = [];
+	for (var i in brand) {
+		if (brand[i].cilindrata > clientCilindrata) {
+			autoCilindrata.push(brand[i]);
+		};
+	};
+	return autoCilindrata
+}
+
+console.log("Le auto con la cilindrata superiore a " + clientCilindrata + " sono: " + officina.confrontaCilindrata(officina.opel));
+console.log("Le auto con la cilindrata superiore a " + clientCilindrata + " sono: " + officina.confrontaCilindrata(officina.toyota));
+console.log("Le auto con la cilindrata superiore a " + clientCilindrata + " sono: " + officina.confrontaCilindrata(officina.renault));
+
+
+officina.contaAuto = function(brand){
+	var autoTotali = 0;
+	for (var i in brand) {
+		autoTotali ++;
+	};
+	return autoTotali;
+}
+
+console.log("In officina si ha un totale di: " + (officina.contaAuto(officina.opel) + officina.contaAuto(officina.toyota) + officina.contaAuto(officina.renault)) + " auto.")
+
+
+
+
+
+
