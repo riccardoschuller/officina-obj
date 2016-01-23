@@ -2,14 +2,17 @@ var officina = {
 	
 	opel: {
 		agila : {
+			modello: "opel agila",
 			"# passeggeri": 5,
 			cilindrata: 996
 		},
 		astra : {
+			modello: "opel astra",
 			"# passeggeri": 5,
 			cilindrata: 1686
 		},
 		corsa : {
+			modello: "opel corsa",
 			"# passeggeri": 4,
 			cilindrata: 1248
 		}
@@ -17,14 +20,17 @@ var officina = {
 
 	toyota: {
 		aygo: {
+			modello: "toyota aygo",
 			"# passeggeri": 4,
 			cilindrata: 998
 		},
 		yaris: {
+			modello: "toyota yaris",
 			"# passeggeri": 4,
 			cilindrata: 1797
 		},
 		"rav 4": {
+			modello: "toyota rav 4",
 			"# passeggeri": 7,
 			cilindrata: 2230
 		},
@@ -32,14 +38,17 @@ var officina = {
 
 	renault: {
 		clio: {
+			modello: "renault clio",
 			"# passeggeri": 4,
 			cilindrata: 898
 		},
 		captur: {
+			modello: "renault captur",
 			"# passeggeri": 5,
 			cilindrata: 1197
 		},
 		twingo: {
+			modello: "renault twingo",
 			"# passeggeri": 4,
 			cilindrata: 898
 		},
@@ -92,9 +101,10 @@ officina.confrontaCilindrata = function(brand){
 	return autoCilindrata
 }
 
-console.log("Le auto con la cilindrata superiore a " + clientCilindrata + " sono: " + officina.confrontaCilindrata(officina.opel));
-console.log("Le auto con la cilindrata superiore a " + clientCilindrata + " sono: " + officina.confrontaCilindrata(officina.toyota));
-console.log("Le auto con la cilindrata superiore a " + clientCilindrata + " sono: " + officina.confrontaCilindrata(officina.renault));
+console.log("Le auto con la cilindrata superiore a " + clientCilindrata + " sono: ");
+console.log(officina.confrontaCilindrata(officina.opel));
+console.log(officina.confrontaCilindrata(officina.toyota));
+console.log(officina.confrontaCilindrata(officina.renault));
 
 
 officina.contaAuto = function(brand){
